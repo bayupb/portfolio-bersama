@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Resume CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <link href="./dist/style.css" rel="stylesheet" />
+    <link href="style-link.css" rel="stylesheet" />
+</head>
+<body class="bg-gradient-to-r from-yellow-500 via-green-500 to-blue-500 font-kanit">
+
+    <div class="my-5">
+        <div class="lg:max-w-5xl md:max-w-3xl max-w-full md:flex mx-auto items-center">
+            <div class="md:w-3/12 w-full">
+                <!-- image profile -->
+                <div class="px-5 py-2 md:mr-3 md:mx-3 rounded-md flex justify-center">
+                    <img src="image/user.png" class=" w-44 shadow-md rounded-full bg-white object-cover items-center">
+                </div>
+
+            </div>
+            <!-- Bi -->
+            <div class="md:w-9/12 w-full">
+                <!-- name Tag -->
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4">
+                    <div class="py-3 text-black md:text-left text-center">
+                        <!-- Change Name -->
+                        <h2 class="uppercase lg:text-3xl md:text-2xl font-bold">
+                            Your Name  
+                        </h2>
+                        <!-- Change Experience -->
+                        <h5 class="capitalize text-sm mt-3 tracking-widest">Your Experience</h5>
+                    </div>
+                </div>
+
+                <!-- Hire Me -->
+                <div class="mx-3 mt-4">
+                    <div class="py-3 md:text-left text-center">
+                        <div class="inline-flex">
+                            <!-- Url Hire Me -->
+                            <a href="#" class="bg-red-800 px-8 py-2 rounded-md text-white hover:bg-white hover:text-black shadow-md text-base inline-flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Hire Me
+                            </a>
+                            <!-- save your cv in the File folder -->
+                            <!-- change File/you.cv -->
+                            <a href="File/your-cv.cv" download="cv-saya" target="_blank" class="bg-green-800 px-8 py-2 ml-3 rounded-md text-white hover:bg-white hover:text-black shadow-md text-base inline-flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Download CV
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="lg:max-w-5xl md:max-w-3xl max-w-full md:flex mx-auto mt-10" x-data="{opentab:1}">
+            <div class="md:w-3/12 w-full text-center overflow-y-auto overscroll-auto h-80">
+                <!-- Link Menu -->
+                <div class="bg-gray-50 shadow-inner group hover:bg-red-800 px-5 py-4 md:mr-3 mx-3 rounded-md">
+                    <button class="lg:text-xl md:text-base text-base uppercase group-hover:text-white" @click="opentab=1">About Me</button>
+                </div>
+                <div class="bg-gray-50 shadow-inner group hover:bg-green-800 px-5 py-4 md:mr-3 mx-3 mt-2 rounded-md">
+                    <button class="lg:text-xl md:text-base text-base uppercase group-hover:text-white" @click="opentab=2">Education</button>
+                </div>
+                <div class="bg-gray-50 shadow-inner group hover:bg-yellow-800 px-5 py-4 md:mr-3 mx-3 mt-2 rounded-md">
+                    <button class="lg:text-xl md:text-base text-base uppercase group-hover:text-white" @click="opentab=3">Certificate</button>
+                </div>
+                <div class="bg-gray-50 shadow-inner group hover:bg-red-700 px-5 py-4 md:mr-3 mx-3 mt-2 rounded-md">
+                    <button class="lg:text-xl md:text-base text-base uppercase group-hover:text-white" @click="opentab=4">Work</button>
+                </div>
+                <div class="bg-gray-50 shadow-inner group hover:bg-blue-500 px-5 py-4 md:mr-3 mx-3 mt-2 rounded-md">
+                    <button class="lg:text-xl md:text-base text-base uppercase group-hover:text-white" @click="opentab=5">Skills</button>
+                </div>
+                <div class="bg-gray-50 shadow-inner group hover:bg-pink-800 px-5 py-4 md:mr-3 mx-3 mt-2 rounded-md">
+                    <button class="lg:text-xl md:text-base text-base uppercase group-hover:text-white" @click="opentab=6">Portfolio</button>
+                </div>
+
+            </div>
+            <!-- Link Menu information -->
+            <div class="md:w-9/12 w-full">
+
+                <!-- About Me  Here -->
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 mb-2" x-show="opentab===1"
+                 x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="py-3 text-black md:text-left text-center">
+                        <h2 class="uppercase lg:text-xl md:text-base font-bold">
+                            About Me  
+                        </h2>
+                    </div>
+                </div>
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 h-72 overscroll-contain overflow-y-auto" x-show="opentab===1"
+                 x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="py-3 text-black md:text-left text-center">
+                        <p class="text-base lg:text-justify mt-3 tracking-widest">
+                            Enter your data here for about
+                        </p>
+                        <div class="mt-3">
+                            <div class="flex flex-col text-sm">
+                                <div class="text-base font-medium">
+                                    <b>Email:</b>
+                                    <span>your@email.com</span>
+                                </div>
+                                <div class="text-base font-medium mt-3">
+                                    <b>Phone:</b>
+                                    <span>+(62) xxx-xxxx-xxxx</span>
+                                </div>
+                                <div class="text-base font-medium mt-3">
+                                    <b>Address:</b>
+                                    <span>Location in here</span> 
+                                </div>
+                                <div class="text-base font-medium mt-3">
+                                    <b>Website:</b>
+                                    <span>Your website or null</span> 
+                                </div>
+                                <div class="text-base font-medium mt-3">
+                                    <b>Freelance:</b>
+                                    <span class="inline-flex">Available <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="green">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </span> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end About -->
+                
+                <!-- Education Here -->
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 mb-2 block" x-show="opentab===2"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="py-3 text-black md:text-left text-center">
+                        <h2 class="uppercase lg:text-xl md:text-base font-bold">
+                            Education  
+                        </h2>
+                    </div>
+                </div>
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 h-72 block overscroll-contain overflow-y-auto" x-show="opentab===2"
+                 x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="flex-col my-5">
+                        <!-- block code to copy -->
+                        <div class="bg-white shadow-inner border-t-4 border-green-800 my-4 px-5 py-4">
+                            <span class="text-sm">2006 - 2012</span>
+                            <h3 class="font-semibold text-base">Information school</h3>
+                        </div>
+                        <!-- end block -->
+                        <!-- copy code in here -->
+
+                        <!-- end copy code in here -->
+                        
+                    </div>
+                </div>
+                <!-- end Education -->
+
+                <!-- Certificate Here -->
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 mb-2 block" x-show="opentab===3"
+                  x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="py-3 text-black md:text-left text-center">
+                        <h2 class="uppercase lg:text-xl md:text-base font-bold">
+                            Certificate  
+                        </h2>
+                    </div>
+                </div>
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 h-72 block overscroll-contain overflow-y-auto" x-show="opentab===3"
+                 x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="flex flex-col">
+                        <!-- block code to copy -->
+                        <div class="bg-white shadow-inner border-t-4 border-yellow-800 my-4 px-5 py-4">
+                            <span class="text-sm bg-yellow-800 px-3 py-1 rounded-md text-white">Bootcamp / etc</span>
+                            <div class="flex justify-between">
+                                <h3 href="#" class="mt-3 text-base font-semibold capitalize">Name Certificate</h3>
+                                <a href="#" class="mt-3 text-sm font-semibold">View Pdf</a>
+                            </div>
+                        </div>
+                        <!-- end block copy -->
+                        <!-- copy code in here -->
+                        <!-- end copy code in here -->
+                    </div>
+                </div>
+                <!-- end Certificate -->
+
+                <!-- Work Here -->
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 mb-2 block" x-show="opentab===4"
+                x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="py-3 text-black md:text-left text-center">
+                        <h2 class="uppercase lg:text-xl md:text-base font-bold">
+                            Work  
+                        </h2>
+                    </div>
+                </div>
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 h-72 block overscroll-contain overflow-y-auto" x-show="opentab===4"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="flex-col my-5">
+                        <!-- change your work in here -->
+
+                        <!-- select && block code -->
+                        <div class="bg-white shadow-inner border-t-4 border-red-700 my-2 px-5 py-4 flex items-center">
+                            <!-- change number format -->
+                            <span class="text-3xl rounded-md px-3 text-white bg-red-500 items-center">1</span>
+                            <div class="ml-4 flex-col">
+                            <!-- change name -->
+                            <h3 class="font-semibold text-xl">PT. Example</h3>
+                            <!-- change jobs -->
+                            <p class="font-medium text-base">Your Jobs</p>
+                            <!-- description -->
+                            <span class="font-normal text-justify text-sm">Description your work</span>
+                            </div>
+                        </div>
+                        <!-- end block code to duplicate -->
+                        <!-- copy code in here -->
+
+                        <!-- end copy code in here -->
+
+
+                        <!-- end change your work in here -->
+                        
+                    </div>
+                </div>
+                <!-- end Education -->
+
+                <!-- skills Here -->
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 mb-2 block" x-show="opentab===5"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="py-3 text-black md:text-left text-center">
+                        <h2 class="uppercase lg:text-xl md:text-base font-bold">
+                            Skills  
+                        </h2>
+                    </div>
+                </div>
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 h-72 block overscroll-contain overflow-y-auto" x-show="opentab===5"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="md:flex my-5">
+                        <!-- change your skills in here -->
+
+                        <div class="md:w-2/4 w-full">
+                            <h4 class="text-xl">Technical Skills</h4>
+                            <div class="flex-col mt-4">
+                                <!-- block code to copy -->
+                                <div class="bg-white shadow-inner border-t-4 py-2 px-4 border-blue-500">
+                                    <p class="text-base font-semibold leading-relaxed">Skills Technical in here</p>
+                                </div>
+                                <!-- end block -->
+                                <!-- copy code in here -->
+
+                                <!-- end copy code in here -->
+                                <!-- copy code in here -->
+
+                                <!-- end copy code in here -->
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="md:w-2/4 w-full md:mx-3 mt-4 md:mt-0">
+                            <h4 class="text-xl">Soft Skills</h4>
+                            <div class="flex-col mt-4">
+                                <!-- block code to copy -->
+                                <div class="bg-white shadow-inner border-t-4 py-2 px-4 border-blue-300">
+                                    <p class="text-base font-semibold leading-relaxed">Your Soft Skills</p>
+                                </div>
+                                <!-- end block -->
+                                <!-- copy code in here -->
+
+                                <!-- end copy code in here -->
+                                
+                            </div>
+                        </div>
+
+                        <!-- end change your skills in here -->
+                        
+                    </div>
+                </div>
+                <!-- end skills -->
+
+                <!-- Portfolio Here -->
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 mb-2 block" x-show="opentab===6"
+                x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="py-3 text-black md:text-left text-center">
+                        <h2 class="uppercase lg:text-xl md:text-base font-bold">
+                            Portfolio  
+                        </h2>
+                    </div>
+                </div>
+                <div class="bg-gray-50 shadow-inner px-5 rounded-md mx-3 md:mt-0 mt-4 h-72 block overscroll-contain overflow-y-auto" x-show="opentab===6"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90">
+                    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 my-5">
+                        <!-- block code to copy -->
+                        <div class="flex flex-col text-center bg-white rounded-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100">
+                            <!-- save your cv in the image/portfolio/ folder -->
+
+                            <!-- change image/portfolio/your-image.jpg/png -->
+                            <img src="image/portfolio/Preview.jpg" class="h-40 w-full">
+                            <!-- end change image/portfolio/your-image.jpg/png -->
+
+                            <h4 class="text-base font-semibold py-2">Name Project</h4>
+                            <!-- input url valid in here -->
+                            <a href="#" class="bg-pink-800 px-5 py-1 text-white hover:bg-pink-500">Live</a>
+                        </div>
+                        <!-- end block code to copy -->
+
+                        <!-- copy code in here -->
+
+                        <!-- end copy code in here -->
+                        
+                    </div>
+                </div>
+                <!-- end Portfolio -->
+            </div>
+        </section>
+    </div>
+    
+</body>
+<script defer src="https://unpkg.com/alpinejs@3.7.0/dist/cdn.min.js"></script>
+</html>
